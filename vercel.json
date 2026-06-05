@@ -1,7 +1,0 @@
-{
-    "functions": {
-      "api/movie.js": {
-        "runtime": "edge"
-      }
-    }
-  }
