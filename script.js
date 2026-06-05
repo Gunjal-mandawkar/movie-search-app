@@ -1,14 +1,14 @@
+
 const searchbtn = document.getElementById('searchbtn');
 const moviebar = document.getElementById('movie');
 
 searchbtn.addEventListener('click', async () => {
-    console.log("THIS BUTTON IS WORKING AAAAHHH");
     const movie = moviebar.value.trim().toLowerCase();
     await fetchMovie(movie);
 });
 
 async function fetchMovie(movie) {
-    const dataURL = `http://www.omdbapi.com/?t=${movie}&apikey=ebe29517`;
+    const dataURL = `/api/movie?title=${encodeURIComponent(movie)}`;
 
     try {
         const response = await fetch(dataURL);
