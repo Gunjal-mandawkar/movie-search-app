@@ -1,6 +1,12 @@
 
 export default async function handler(req, res){
 const API_KEY = process.env.OMDB_API_KEY;
+const { title } = req.query;
+
+    // Safety check: if no title was provided, tell the frontend immediately
+    if (!title) {
+        return res.status(400).json({ error: 'Title query parameter is required' });
+    }
  
     try {
         const omdbUrl = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${API_KEY}`;
