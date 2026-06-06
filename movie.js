@@ -1,6 +1,6 @@
 
-module.exports = async function handler(req, res){
-const API_KEY = process.env.KEY;
+export default async function handler(req, res){
+const API_KEY = process.env.OMDB_API_KEY;
  
     try {
         const omdbUrl = `https://www.omdbapi.com/?t=${encodeURIComponent(title)}&apikey=${API_KEY}`;
